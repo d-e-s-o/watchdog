@@ -36,11 +36,11 @@ use log::debug;
 use log::error;
 use log::warn;
 
-use mio::unix::pipe::Receiver;
 use mio::Events;
 use mio::Interest;
 use mio::Poll;
 use mio::Token;
+use mio::unix::pipe::Receiver;
 
 use crate::args::Args;
 use crate::backoff::Backoff;

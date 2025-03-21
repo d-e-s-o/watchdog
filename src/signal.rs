@@ -9,14 +9,14 @@ use std::sync::atomic::Ordering;
 use anyhow::Context as _;
 use anyhow::Result;
 
+use libc::SIG_ERR;
+use libc::SIGCHLD;
+use libc::SIGINT;
+use libc::SIGTERM;
 use libc::c_int;
 use libc::signal;
 use libc::size_t;
 use libc::write;
-use libc::SIGCHLD;
-use libc::SIGINT;
-use libc::SIGTERM;
-use libc::SIG_ERR;
 
 use mio::unix::pipe;
 

@@ -1,9 +1,9 @@
 // Copyright (C) 2025 Daniel Mueller <deso@posteo.net>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+use std::fs::File;
 use std::fs::remove_file;
 use std::fs::rename;
-use std::fs::File;
 use std::io;
 use std::io::BufRead as _;
 use std::io::BufReader;
@@ -20,8 +20,8 @@ use std::path::PathBuf;
 use anyhow::Context as _;
 use anyhow::Result;
 
-use libc::dup3;
 use libc::O_CLOEXEC;
+use libc::dup3;
 
 use log::warn;
 
@@ -111,6 +111,7 @@ impl Builder {
       let max_lines = max_lines.unwrap_or(1000);
       let max_files = max_files.unwrap_or(10);
 
+      #[allow(clippy::ineffective_open_options)]
       let mut file = File::options()
         .create(true)
         .read(true)

@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 use std::io;
-use std::io::stderr;
 use std::io::Write as _;
+use std::io::stderr;
 use std::mem::MaybeUninit;
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -13,13 +13,13 @@ use anyhow::Result;
 
 use bufio::Writer as StackWriter;
 
-use log::max_level;
-use log::set_logger;
-use log::set_max_level;
 use log::Level;
 use log::Log;
 use log::Metadata;
 use log::Record;
+use log::max_level;
+use log::set_logger;
+use log::set_max_level;
 
 use jiff::Timestamp;
 

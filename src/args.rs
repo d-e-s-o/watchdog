@@ -6,8 +6,8 @@ use std::path::PathBuf;
 use std::str::FromStr;
 use std::time::Duration;
 
-use anyhow::anyhow;
 use anyhow::Error;
+use anyhow::anyhow;
 
 use clap::ArgAction;
 use clap::Parser;

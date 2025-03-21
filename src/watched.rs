@@ -15,8 +15,8 @@ use std::process::Stdio;
 use anyhow::Context as _;
 use anyhow::Result;
 
-use libc::kill;
 use libc::SIGTERM;
+use libc::kill;
 
 use mio::unix::pipe;
 use mio::unix::pipe::Receiver;
